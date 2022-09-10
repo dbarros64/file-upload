@@ -26,6 +26,8 @@ app.get("/", (req, res) => {
   res.send("<h1>File Upload Starter</h1>");
 });
 
+app.use(fileUpload());
+
 app.use("/api/v1/products", productRouter);
 app.use("/api/v1/uploads", uploadProductImage);
 
