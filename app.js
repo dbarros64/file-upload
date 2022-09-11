@@ -18,9 +18,9 @@ const errorHandlerMiddleware = require("./middleware/error-handler");
 const { uploadProductImage } = require("./controllers/uploadController");
 
 app.use(express.json());
-// app.use(express.urlencoded({ extended: true }));
+app.use(express.urlencoded({ extended: true }));
 
-app.use(express.static("./public"));
+app.use(fileUpload());
 
 app.get("/", (req, res) => {
   res.send("<h1>File Upload Starter</h1>");
